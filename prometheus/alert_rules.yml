@@ -1,0 +1,11 @@
+groups:
+  - name: latency
+    rules:
+      - alert: HighRequestLatency
+        expr: http_request_duration_ms_bucket{le="500"} > 10
+        for: 5m
+        labels:
+          severity: page
+        annotations:
+          summary: latency
+          description: "latency {{ $labels.instance }}"

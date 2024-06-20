@@ -1,0 +1,14 @@
+server:
+  http_listen_port: 3200
+
+distributors:
+  compactor:
+    working_directory: /tempo/compact
+    compaction:
+      compact: true
+
+storage:
+  trace:
+    backend: local
+    local:
+      path: /tempo/traces
